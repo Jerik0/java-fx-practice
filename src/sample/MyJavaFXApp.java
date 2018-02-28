@@ -19,14 +19,14 @@ public class MyJavaFXApp extends Application {
     primaryStage.setScene(scene);
     primaryStage.show();
 
+    Pane pane1 = new Pane();
     Stage stage = new Stage();
     Circle circle = new Circle();
-    circle.setCenterX(100);
-    circle.setCenterY(100);
+    circle.centerXProperty().bind(pane1.widthProperty().divide(2));
+    circle.centerYProperty().bind(pane1.heightProperty().divide(2));
     circle.setRadius(50);
     circle.setStroke(Color.LIGHTPINK);
     circle.setFill(Color.BLUE);
-    Pane pane1 = new Pane();
 
     pane1.getChildren().add(circle);
     Scene scene1 = new Scene(pane1, 200, 200);
